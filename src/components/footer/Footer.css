@@ -1,0 +1,81 @@
+
+
+  .footer-container {
+    background-color: #26272b;
+    font-size: 17px;
+    line-height: 35px;
+    color: whitesmoke;
+    padding: 50px 50px 5px 50px;
+}
+
+.footer h6 {
+    color: #a50f16;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.footer .social-icons {
+    text-align: center;
+    padding-top: 30px;
+    list-style: none;
+}
+
+.footer .social-icons a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: 6px;
+    margin-right: 0;
+    border-radius: 100%;
+    background-color: #33353d;
+}
+
+.social-icons li {
+    display: inline-block;
+}
+
+.social-icons a {
+    color: #818a91;
+    font-size: 16px;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    border-radius: 100%;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.social-icons a:active a:hover a:focus {
+    background-color: #29aafe;
+}
+
+.social-icons a.facebook:hover {
+    background-color: #3b5998;
+}
+
+.social-icons a.twitter:hover {
+    background-color: #00aced;
+}
+
+.social-icons a.linkedin:hover {
+    background-color: #007bb6;
+}
+
+.footer-contact {
+    list-style: none;
+    text-align: center;
+}
+
+hr {
+    border: solid 1px #a50f16;
+    padding: 0;
+}
+
+.copyright-text {
+    text-align: center;
+    padding-top: 10px;
+}
