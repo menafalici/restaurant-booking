@@ -1,11 +1,19 @@
 import React from 'react'
 
-function kontakt() {
+function Kontakt() {
     return (
-        <div>
+        <>
+            <div>
+                <img
+                    className="d-block w-100"
+                    src="images/flame.jpg"
+                    alt=""
+                />
+            </div>
 
-        </div>
+
+        </>
     )
 }
 
-export default kontakt
+export default Kontakt

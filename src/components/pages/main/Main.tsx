@@ -1,10 +1,86 @@
 import React from 'react'
+import './Main.css'
+import { Link } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Carousel, Button } from 'react-bootstrap';
+
+
 
 function Main() {
     return (
-        <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et illo dolor saepe sapiente ex itaque qui pariatur enim voluptatibus eligendi facilis laborum eius, vitae architecto totam nostrum a odit in! Accusamus, quisquam hic ut neque quas laborum quos ab provident quis aut quaerat voluptate ea, animi blanditiis repellat. Laboriosam delectus, nemo necessitatibus laborum aliquid, dolore porro voluptate sapiente a, fugiat repellat accusamus. Voluptate ipsam officia cupiditate architecto repellat adipisci quisquam sint vel eos, amet quo commodi aut nemo doloribus perferendis id soluta quam atque fuga minus nostrum! Pariatur vero dolor, aut culpa aspernatur, assumenda officiis quae, repudiandae dolorum excepturi voluptate? Amet in adipisci officia natus fuga animi ratione ullam, sint nam eaque voluptatem distinctio esse molestiae eligendi quaerat maiores. Velit sunt illo rem quod temporibus est numquam dolorem quia assumenda nesciunt, laboriosam maiores ex architecto laudantium officia, reiciendis dolores dolor accusamus, eveniet cum voluptatem. Omnis dolores a placeat ducimus laborum. Quaerat, repellendus enim! Fuga commodi maxime itaque dolorem numquam voluptatem deleniti officiis tenetur eos soluta quas exercitationem illum, cum ut dolor voluptate nostrum. Corrupti provident facilis saepe, deserunt eius adipisci asperiores et. Sed explicabo deserunt repudiandae repellendus beatae fuga unde quo dolore asperiores? Delectus, voluptatem aperiam voluptates alias similique officia temporibus facere ducimus numquam corporis inventore. Est rerum quae similique velit laudantium officiis cum voluptas soluta, officia quaerat dolore architecto tempora </p>
-        </div>
+        <>
+            <div className='carousel'>
+                <Carousel>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="images/slider_1.png"
+                            alt="First slide"
+                        />
+                        <Carousel.Caption>
+                            <h3>First slide label</h3>
+                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="images/slider_2.png"
+                            alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                            <h3>Second slide label</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                        <img
+                            className="d-block w-100"
+                            src="images/slider_3.png"
+                            alt="Third slide"
+                        />
+
+                        <Carousel.Caption>
+                            <h3>Third slide label</h3>
+                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        </Carousel.Caption>
+                    </Carousel.Item>
+                </Carousel>
+            </div>
+
+            <div className='main-welcome'>
+                <div className="row">
+                    <div className="col-sm-12 col-md-6">
+                        <h3><b>WELCOME TO GOLDEN FORK</b></h3>
+                        <br />
+                        <p>
+                            Golden Fork är Stockholms äldsta och bästa rockställe! En oas för dig som gillar god mat och bra musik, oavsett ålder eller samhällsklass. <br /><br />
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illum distinctio velit, minus modi eos quasi quo reprehenderit eius possimus delectus atque suscipit officia magnam, necessitatibus neque. Obcaecati corporis aliquid ipsum.
+                </p>
+                    </div>
+
+
+                    <div className="col-sm-12 col-md-6">
+                        <h3><b>TODAY'S MENU</b></h3>
+                        <br />
+                        <img
+                            className="d-block w-100"
+                            src="images/todays_menu.jpg"
+                            alt="Today's menu"
+                        />
+                    </div>
+
+
+                </div>
+
+                <Button className=' mt-5' variant="danger" size="lg" block>
+                    <Link to='/boka' > Book a table</Link>
+                </Button>
+
+
+            </div>
+        </>
     )
 }
 

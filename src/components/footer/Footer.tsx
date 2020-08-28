@@ -1,11 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+
 
 function Footer() {
     return (
@@ -21,9 +16,9 @@ function Footer() {
                 <div className="col-sm-12 col-md-4">
                     <ul className="social-icons">
                         <li>
-                            <Link to="/http://www.facebook.com/" className="facebook">
+                            <a className="facebook" href="http://www.facebook.com/" target="_blank">
                                 <i className="fab fa-facebook-square" />
-                            </Link>
+                            </a>
 
                         </li>
                         <li>
@@ -53,8 +48,6 @@ function Footer() {
                     <p className="copyright-text">Copyright &copy; 2020 Golden Fork</p>
                 </div>
             </div>
-
-
         </div>
     )
 }
