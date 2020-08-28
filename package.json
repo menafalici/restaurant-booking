@@ -8,8 +8,12 @@
     "@testing-library/user-event": "^7.1.2",
     "@types/jest": "^24.0.0",
     "@types/node": "^12.0.0",
+<<<<<<< HEAD
     "bootstrap": "^4.5.2",
     "node-sass": "^4.14.1",
+=======
+    "axios": "^0.20.0",
+>>>>>>> bfce42b792a1dc6aa02010de9088de16125af4c3
     "react": "^16.13.1",
     "react-bootstrap": "^1.3.0",
     "react-dom": "^16.13.1",
