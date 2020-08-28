@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Boka() {
+function NotFound() {
     return (
         <div>
-            boka
+            Page not found...
         </div>
     )
 }
 
-export default Boka
+export default NotFound
