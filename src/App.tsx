@@ -10,6 +10,7 @@ import Main from './components/pages/main/Main';
 import Kontakt from './components/pages/kontakt/Kontakt';
 import Boka from './components/pages/boka/Boka';
 import Footer from './components/footer/Footer';
+import Admin from './components/pages/admin/Admin';
 import NotFound from './components/notfound/NotFound';
 
 function App() {
@@ -27,6 +28,9 @@ function App() {
             </Route>
             <Route path='/boka'>
               <Boka />
+            </Route>
+            <Route path='/admin'>
+              <Admin />
             </Route>
             <Route component={NotFound} />
           </Switch>
