@@ -4,8 +4,6 @@ import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Carousel, Button } from 'react-bootstrap';
 
-
-
 function Main() {
     return (
         <>
