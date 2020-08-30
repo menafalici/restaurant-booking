@@ -2,7 +2,7 @@ import React from 'react'
 
 function Admin() {
     return (<div>
-        <h3> Bookings</h3>
+        <h3> Admin page</h3>
     </div>)
 }
 

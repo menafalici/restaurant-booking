@@ -12,6 +12,7 @@ import Boka from './components/pages/boka/Boka';
 import Footer from './components/footer/Footer';
 import Admin from './components/pages/admin/Admin';
 import NotFound from './components/notfound/NotFound';
+import Thankyou from './components/pages/thankyou/Thankyou';
 
 function App() {
   return (
@@ -31,6 +32,9 @@ function App() {
             </Route>
             <Route path='/admin'>
               <Admin />
+            </Route>
+            <Route path='/thankyou'>
+              <Thankyou />
             </Route>
             <Route component={NotFound} />
           </Switch>

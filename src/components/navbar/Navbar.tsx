@@ -12,7 +12,14 @@ function Navbar() {
             <nav className="navbar">
                 <div className="navbar-container">
                     <Link to="/" className="navbar-logo">
-                        Golden Fork < i className="fas fa-utensils" />
+
+                        <img
+                            className="logo-pic"
+                            src="images/logo_pic.png"
+                            alt=""
+                        />
+                  Golden Fork
+                  {/* < i className="fas fa-utensils" /> */}
                     </Link>
                     <div className="menu-icon" onClick={handleClick}>
                         < i className={click ? 'fas fa-times' : 'fas fa-bars'} />
