@@ -1,5 +1,5 @@
 import React from 'react';
-import './Kontakt.css';
+import './kontakt.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Kontakt() {
