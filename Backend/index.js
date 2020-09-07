@@ -39,6 +39,7 @@ app.post("/", async (req, res) => {
 
     let newReservation = new Reservation({
         name : reservation.name,
+        email: reservation.email,
         date : reservation.date,
         time : reservation.time
     })
@@ -54,6 +55,18 @@ app.post("/", async (req, res) => {
         }
     });
 })
+
+app.delete("/deleteBooking/:id", async (req, res) => {
+    // removing reservation from database
+    const deletedReservation = await Reservation.findOne({
+        reservationId: req.params.id
+    });
+    const reservation = await Reservation.deleteOne({
+        reservationId: req.params.id
+    });
+    res.send(JSON.stringify(deletedReservation) + "deleted")
+});
+
 
 mongoose
 .connect(config.databaseURL, config.options)
