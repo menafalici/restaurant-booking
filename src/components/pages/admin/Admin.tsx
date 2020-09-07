@@ -28,10 +28,16 @@ function Admin() {
     }
 
     function deleteReservation(reservationId: string){
-        axios.delete('http://localhost:5000/deleteBooking/' + reservationId)
+        axios.delete('http://localhost:5000/deleteBooking/' + reservationId).then((res) => {
+            updateAdmin();
+        })
     }
 
-
+    function updateAdmin(){
+        axios.get('http://localhost:5000').then((res) => {
+            setReservations(res.data);
+        })
+    }
 
     function postNewReservation() {
 
@@ -80,7 +86,8 @@ function Admin() {
                 return <div>
                     <li key={reservation._id}>{reservation.email} - {reservation.name} - {reservation.date} - {reservation.time}</li>
                     <button onClick={() => deleteReservation(reservation._id)}>remove</button>
-                    {/*<button onClick={() => deleteReservation(reservation._id)}>change</button>*/}
+                    <button onClick={() => deleteReservation(reservation._id)}>change</button>
+                    
                 </div>
             })}
         </ul>
