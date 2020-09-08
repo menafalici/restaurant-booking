@@ -85,8 +85,13 @@ function Admin() {
             {reservations.map((reservation: Reservation) => {
                 return <div>
                     <li key={reservation._id}>{reservation.email} - {reservation.name} - {reservation.date} - {reservation.time}</li>
-                    <button onClick={() => deleteReservation(reservation._id)}>remove</button>
-                    <button onClick={() => deleteReservation(reservation._id)}>change</button>
+                    <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
+                    <input type="date" value={reservationDate} onChange={updateDate} min={currentDate} />
+            <div onChange={updateTime}>
+                <input type="radio" value="1800" name="time" /> 18:00
+                <input type="radio" value="2100" name="time" /> 21:00
+            </div>
+            <button onClick={postNewReservation}>Uppdatera</button>
                     
                 </div>
             })}
