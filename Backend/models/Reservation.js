@@ -7,6 +7,10 @@ let reservationSchema = new Schema({
         type: String,
         required: true
     },
+    mail: {
+        type: String,
+        required: true
+    },
     date: {
         type: String,
         required: true

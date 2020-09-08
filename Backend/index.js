@@ -31,6 +31,23 @@ app.get('/', async function (req, res) {
     res.send(reservationArray);
 });
 
+app.get('/search/:date/:time', async function (req, res) {
+    let reservationArray = [];
+    let date = req.params.date;
+    let time = req.params.time;
+
+    console.log(date)
+
+    let reservations  = await Reservation.find({
+        date: date,
+        time: time
+    }, "name date time");
+
+    reservationArray = reservations;
+
+    res.send(reservationArray);
+});
+
 app.post("/", async (req, res) => {
 
     let reservation = req.body;
@@ -39,6 +56,7 @@ app.post("/", async (req, res) => {
 
     let newReservation = new Reservation({
         name : reservation.name,
+        mail: reservation.mail,
         date : reservation.date,
         time : reservation.time
     })
