@@ -6,7 +6,7 @@ function Admin() {
     const [reservations, setReservations] = useState([]);
     
     const [reservationName, setReservationName] = useState('');
-    const [reservationEmail, setReservationEmail] = useState('');
+    const [reservationMail, setReservationMail] = useState('');
     const [reservationDate, setReservationDate] = useState('');
     const [reservationTime, setReservationTime] = useState(1800);
     const currentDate: string = new Date().toLocaleDateString();
@@ -14,8 +14,8 @@ function Admin() {
     function updateName(e: ChangeEvent<HTMLInputElement>) {
         setReservationName(e.target.value);
     }
-    function updateEmail(e: ChangeEvent<HTMLInputElement>) {
-        setReservationEmail(e.target.value);
+    function updateMail(e: ChangeEvent<HTMLInputElement>) {
+        setReservationMail(e.target.value);
     }
 
     function updateDate(e: ChangeEvent<HTMLInputElement>) {
@@ -44,7 +44,7 @@ function Admin() {
         let newReservation: Reservation = new Reservation();
 
         newReservation.date = reservationDate;
-        newReservation.email = reservationEmail;
+        newReservation.mail = reservationMail;
         newReservation.name = reservationName;
         newReservation.time = reservationTime;
 
@@ -71,7 +71,7 @@ function Admin() {
         <h3> Admin page</h3>
         <div>
             <h3>Bokning fungerar</h3>
-            <input type="text" placeholder="email" value={reservationEmail} onChange={updateEmail} />
+            <input type="text" placeholder="email" value={reservationMail} onChange={updateMail} />
             <input type="text" placeholder="full name" value={reservationName} onChange={updateName} />
             <input type="date" value={reservationDate} onChange={updateDate} min={currentDate} />
             <div onChange={updateTime}>
@@ -83,6 +83,7 @@ function Admin() {
     
         <ul>
             {reservations.map((reservation: Reservation) => {
+<<<<<<< HEAD
                 return <div>
                     <li key={reservation._id}>{reservation.email} - {reservation.name} - {reservation.date} - {reservation.time}</li>
                     <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
@@ -92,6 +93,12 @@ function Admin() {
                 <input type="radio" value="2100" name="time" /> 21:00
             </div>
             <button onClick={postNewReservation}>Uppdatera</button>
+=======
+                return <div key={reservation._id}>
+                    <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.date} - {reservation.time}</li>
+                    <button onClick={() => deleteReservation(reservation._id)}>remove</button>
+                    <button onClick={() => deleteReservation(reservation._id)}>change</button>
+>>>>>>> f0bba4fdf32ef91fa7903e210860c424fff14156
                     
                 </div>
             })}
