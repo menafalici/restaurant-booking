@@ -24,7 +24,7 @@ app.get('/', async function (req, res) {
     let reservationArray = [];
     let reservations  = await Reservation.find({
         // name: "Skor"
-    }, "name date time");
+    });
 
     reservationArray = reservations;
   
