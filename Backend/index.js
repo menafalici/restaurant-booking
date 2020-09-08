@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const mongoose = require("mongoose");
 const bodyParser = require('body-parser');
+const cors = require ('cors')
 
 const config = require("./database/config");;
 const Reservation = require("./models/Reservation");
@@ -12,9 +13,10 @@ app.use(function(req, res, next) {
     next();
   });
 
-// app.use(cors({
-//     origin: 'http://localhost:3000'
-//   }));
+app.use(cors({
+    origin: 'http://localhost:3000'
+  }));
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -72,6 +74,23 @@ app.post("/", async (req, res) => {
         }
     });
 })
+
+app.delete("/deleteBooking/:id", async (req, res) => {
+    // removing reservation from database
+    console.log(req.params.id)
+    const deletedReservation = await Reservation.findOne({
+        _id: req.params.id
+    });
+    // const reservation = await Reservation.deleteOne({
+    //     reservationId: req.params.id
+    // });
+
+    deletedReservation.delete();
+
+
+   res.send(JSON.stringify(deletedReservation) + "deleted")
+});
+
 
 mongoose
 .connect(config.databaseURL, config.options)
