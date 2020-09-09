@@ -78,7 +78,6 @@ app.post("/", async (req, res) => {
 
 app.delete("/deleteBooking/:id", async (req, res) => {
     // removing reservation from database
-    console.log(req.params.id)
     const deletedReservation = await Reservation.findOne({
         _id: req.params.id
     });
@@ -94,10 +93,10 @@ app.delete("/deleteBooking/:id", async (req, res) => {
 
 app.get("/updateBooking/:id", async (req,res) => {
     console.log(req.params.id)
-    // const oneBooking = await Reservation.findById({
-    //     _id: req.params.id
-    // })
-    console.log("detta är id from node ")
+    const oneBooking = await Reservation.findOne({
+        _id: req.params.id
+    })
+    console.log("detta är id from node "+oneBooking)
     // res.send(oneBooking);
 })
 

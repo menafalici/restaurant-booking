@@ -39,9 +39,9 @@ function App() {
             </Route>
             {/* <Route component={NotFound}>
               </Route> */}
-            {/* <Route exact path="/updateBooking/:id">
+            <Route exact path="/updateBooking/:id">
               <Update></Update>
-            </Route> */}
+            </Route>
           </Switch>
         </div>
         <Footer />

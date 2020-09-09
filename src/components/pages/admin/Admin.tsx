@@ -194,8 +194,7 @@ function Admin() {
                 return <div key={reservation._id}>
                     <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
                     <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
-                    <button onClick={() => deleteReservation(reservation._id)}>Updatera</button>
-                    {showReservation ? <Update oneReservation={reservations}></Update> : ''}
+                    <Link to={"/updateBooking/"+reservation._id}><button>Updatera</button></Link>
 
                     
                 </div>

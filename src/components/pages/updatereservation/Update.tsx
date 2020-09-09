@@ -2,13 +2,7 @@ import React, { useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 
-interface IUpdateProps {
-    oneReservation: any;
-}
-
-export default function Update(props: IUpdateProps) {
-
-    console.log(props)
+export default function Update() {
 
     let id = useParams();
     console.log("id från params", id)
