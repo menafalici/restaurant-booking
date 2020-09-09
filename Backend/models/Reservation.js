@@ -15,6 +15,10 @@ let reservationSchema = new Schema({
         type: String,
         required: true
     },
+    people: {
+        type: Number,
+        required: true
+    },
     time: {
         type: Number,
         required: true
