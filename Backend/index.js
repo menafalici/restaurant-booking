@@ -92,12 +92,12 @@ app.delete("/deleteBooking/:id", async (req, res) => {
 });
 
 app.get("/updateBooking/:id", async (req,res) => {
-    console.log(req.params.id)
+    console.log("id =" + req.params)
     const oneBooking = await Reservation.findOne({
         _id: req.params.id
     })
     console.log("detta är id from node "+oneBooking)
-    // res.send(oneBooking);
+    res.send(oneBooking);
 })
 
 // app.put("/updateBooking/:id", async(req,res)=>{

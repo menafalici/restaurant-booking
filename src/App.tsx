@@ -39,7 +39,7 @@ function App() {
             </Route>
             {/* <Route component={NotFound}>
               </Route> */}
-            <Route exact path="/updateBooking/:id">
+            <Route path="/updateBooking/:id" component={Update}>
               <Update></Update>
             </Route>
           </Switch>
