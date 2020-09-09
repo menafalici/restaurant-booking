@@ -65,7 +65,7 @@ function Boka() {
             setPeopleWarning(false);
         }
 
-        if (reservationName == '') {
+        if (reservationName === '') {
             setNameWarning(true);
         }
 
@@ -73,7 +73,7 @@ function Boka() {
             setNameWarning(false);
         }
 
-        if (reservationName != '' && reservationPeople <= 6 && reservationPeople >= 1) {
+        if (reservationName !== '' && reservationPeople <= 6 && reservationPeople >= 1) {
 
             
             let newReservation: Reservation = new Reservation();
@@ -81,6 +81,7 @@ function Boka() {
             newReservation.date = reservationDate;
             newReservation.name = reservationName;
             newReservation.mail = reservationMail;
+            newReservation.people = reservationPeople;
             newReservation.time = reservationTime;
             
             axios.post('http://localhost:5000', newReservation).then((res: { data: any; }) => {
@@ -134,7 +135,7 @@ function Boka() {
                         <input type="text" placeholder="Namn på bokningen" value={reservationName} onChange={updateName} required />
                         <span>
                             &nbsp;vill boka ett bord för {reservationPeople} {reservationPeople < 2 ? 'person' : 'personer'} klockan 
-                            {reservationTime == 1800 ? ' 18.00' : ' 21.00'} på datumet: {reservationDate}
+                            {reservationTime === 1800 ? ' 18.00' : ' 21.00'} på datumet: {reservationDate}
                         </span>
                       </div>
 
