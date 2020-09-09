@@ -221,27 +221,10 @@ function Admin() {
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </>)
 
 
 
-=======
-
-        <ul>
-            {reservations.map((reservation: Reservation) => {
-                console.log(reservation._id)
-                return <div key={reservation._id}>
-                    <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
-                    <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
-                    <Link to={"/updateBooking/"+reservation._id}><button>Updatera</button></Link>
-
-
-                </div>
-            })}
-        </ul>
-    </div>)
->>>>>>> 5a2ac7f022e5a508996403e70f61bd83dc9d9b40
 }
 
 export default Admin
