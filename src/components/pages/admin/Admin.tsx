@@ -138,8 +138,9 @@ function Admin() {
                                         <input type="date" value={reservationDate} onChange={updateDate} min={currentDate} />
 
                                         <div onChange={updateTime}>
-                                            <input type="radio" value="1800" name="time" /> 18.00
-                    <input type="radio" value="2100" name="time" /> 21.00
+                                            <br />
+                                            <input type="radio" value="1800" name="time" /> <span style={{ marginRight: 30 }}>18.00</span>
+                                            <input type="radio" value="2100" name="time" /> 21.00
                 </div>
                                         <br />
 
@@ -210,7 +211,7 @@ function Admin() {
                                     <br />
                                     <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
 
-                                    <button onClick={() => deleteReservation(reservation._id)}>remove</button>
+                                    <button style={{ marginRight: 30 }} onClick={() => deleteReservation(reservation._id)}>remove</button>
 
                                     <button onClick={() => deleteReservation(reservation._id)}>change</button>
 
