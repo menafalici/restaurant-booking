@@ -2,6 +2,8 @@ import React, { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios';
 import './Admin.css';
 import Reservation from '../../../models/Reservation';
+import { Link } from 'react-router-dom';
+import Update from '../updatereservation/Update';
 
 function Admin() {
     const [reservations, setReservations] = useState([]);
@@ -15,6 +17,7 @@ function Admin() {
     const [reservationTime, setReservationTime] = useState(1800);
     const [booking, setBooking] = useState(false);
     const currentDate: string = new Date().toLocaleDateString();
+    const [showReservation, setShowReservation] = useState(false);
 
     function updateName(e: ChangeEvent<HTMLInputElement>) {
         setReservationName(e.target.value);
@@ -119,87 +122,6 @@ function Admin() {
     }, []);
 
 
-    /*   return (<div>
-          <h3> Admin page</h3>
-          <div>
-              {!booking
-  
-                  ? <div>
-                      <h3>Sök på datum och tid</h3>
-                      <div>
-                          <input type="date" value={reservationDate} onChange={updateDate} min={currentDate} />
-  
-                          <div onChange={updateTime}>
-                              <input type="radio" value="1800" name="time" /> 18.00
-                      <input type="radio" value="2100" name="time" /> 21.00
-                  </div>
-  
-                          <button onClick={searchCalendar}>Sök datum</button>
-                      </div>
-                  </div>
-                  : <div></div>
-              }
-  
-              {booking
-                  ?
-                  <div>
-                      {tablesReserved < 15
-                          ?
-                          <div>
-                              <div>
-                                  {nameWarning ? <p>Vänligen skriv in ett namn</p> : <div></div>}
-                                  {peopleWarning ? <p>Vänligen välj ett antal personer mellan 1 och 6</p> : <div></div>}
-                              </div>
-  
-                              <form onSubmit={postNewReservation}>
-                                  <div>
-                                      <input type="text" placeholder="Namn på bokningen" value={reservationName} onChange={updateName} required />
-                                      <span>
-                                          &nbsp;vill boka ett bord för {reservationPeople} {reservationPeople < 2 ? 'person' : 'personer'} klockan
-                              {reservationTime === 1800 ? ' 18.00' : ' 21.00'} på datumet: {reservationDate}
-                                      </span>
-                                  </div>
-  
-                                  <div>
-                                      <input type="email" placeholder="Mail till bokningen" value={reservationMail} onChange={updateMail} required />
-                                  </div>
-  
-                                  <div>
-                                      <span>Antal personer: </span>
-                                      <input type="number" value={reservationPeople} onChange={updatePeople} min="1" max="6" placeholder="1-6" />
-  
-                                  </div>
-  
-                                  <button type="submit">Boka</button>
-                              </form>
-                          </div>
-                          :
-                          <div>
-                              <h3>Det finns inga bord lediga vid den tiden.</h3>
-  
-                              <button onClick={() => { setBooking(false) }}>Tillbaka till kalendern</button>
-                          </div>
-                      }
-                  </div>
-                  :
-                  <div></div>
-              }
-          </div>
-  
-          <ul>
-              {reservations.map((reservation: Reservation) => {
-                  return <div key={reservation._id}>
-                      <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
-                      <button onClick={() => deleteReservation(reservation._id)}>remove</button>
-                      <button onClick={() => deleteReservation(reservation._id)}>change</button>
-  
-                  </div>
-              })}
-          </ul>
-      </div>) */
-
-
-
     return (<>
         <div className=' m-5'>
             <div className=" row">
@@ -299,10 +221,27 @@ function Admin() {
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
     </>)
 
 
 
+=======
+
+        <ul>
+            {reservations.map((reservation: Reservation) => {
+                console.log(reservation._id)
+                return <div key={reservation._id}>
+                    <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
+                    <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
+                    <Link to={"/updateBooking/"+reservation._id}><button>Updatera</button></Link>
+
+
+                </div>
+            })}
+        </ul>
+    </div>)
+>>>>>>> 5a2ac7f022e5a508996403e70f61bd83dc9d9b40
 }
 
 export default Admin
