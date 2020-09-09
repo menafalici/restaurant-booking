@@ -204,7 +204,7 @@ function Admin() {
                             }
                         </div>
 
-                        <h3>Orders</h3>
+                        <h3>Reserved tables</h3>
                         <ol>
                             {reservations.map((reservation: Reservation) => {
                                 return <div key={reservation._id}>
