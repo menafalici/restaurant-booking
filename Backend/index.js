@@ -91,6 +91,25 @@ app.delete("/deleteBooking/:id", async (req, res) => {
    res.send(JSON.stringify(deletedReservation) + "deleted")
 });
 
+app.get("/updateBooking/:id", async (req,res) => {
+    console.log(req.params.id)
+    // const oneBooking = await Reservation.findById({
+    //     _id: req.params.id
+    // })
+    console.log("detta är id from node ")
+    // res.send(oneBooking);
+})
+
+// app.put("/updateBooking/:id", async(req,res)=>{
+//     const updatedReservation = await Reservation.updateOne({
+//         _id: req.params._id
+//     },
+//     {$set: {
+//         date: req.body.updateReservation.date,
+//         time: req.body.updateReservation.time,
+//     }})
+// })
+
 
 mongoose
 .connect(config.databaseURL, config.options)

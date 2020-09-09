@@ -1,6 +1,8 @@
 import React, { useEffect, useState, ChangeEvent } from 'react'
 import axios from 'axios';
 import Reservation from '../../../models/Reservation';
+import { Link } from 'react-router-dom';
+import Update from '../updatereservation/Update';
 
 function Admin() {
     const [reservations, setReservations] = useState([]);
@@ -10,6 +12,7 @@ function Admin() {
     const [reservationDate, setReservationDate] = useState('');
     const [reservationTime, setReservationTime] = useState(1800);
     const currentDate: string = new Date().toLocaleDateString();
+    const [showReservation, setShowReservation] = useState(false);
 
     function updateName(e: ChangeEvent<HTMLInputElement>) {
         setReservationName(e.target.value);
@@ -83,11 +86,12 @@ function Admin() {
     
         <ul>
             {reservations.map((reservation: Reservation) => {
+                console.log(reservation._id)
                 return <div key={reservation._id}>
                     <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.date} - {reservation.time}</li>
-                    <button onClick={() => deleteReservation(reservation._id)}>remove</button>
-                    <button onClick={() => deleteReservation(reservation._id)}>change</button>
-                    
+                    <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button> 
+                    <button onClick={() => setShowReservation(true)}>Updatera</button>
+                    {showReservation ? <Update oneReservation={reservations}></Update> : ''}
                 </div>
             })}
         </ul>

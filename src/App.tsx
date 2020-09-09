@@ -8,11 +8,12 @@ import {
 import Navbar from './components/navbar/Navbar';
 import Main from './components/pages/main/Main';
 import Kontakt from './components/pages/kontakt/Kontakt';
-import Boka from './components/pages/boka/Boka';
+import Boka from './components/pages/boka/Boka'
 import Footer from './components/footer/Footer';
 import Admin from './components/pages/admin/Admin';
 import NotFound from './components/notfound/NotFound';
 import Thankyou from './components/pages/thankyou/Thankyou';
+import Update from './components/pages/updatereservation/Update';
 
 function App() {
   return (
@@ -36,7 +37,11 @@ function App() {
             <Route path='/thankyou'>
               <Thankyou />
             </Route>
-            <Route component={NotFound} />
+            {/* <Route component={NotFound}>
+              </Route> */}
+            {/* <Route exact path="/updateBooking/:id">
+              <Update></Update>
+            </Route> */}
           </Switch>
         </div>
         <Footer />
