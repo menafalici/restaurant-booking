@@ -2,7 +2,7 @@ import React from 'react'
 import './Main.css'
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Carousel, Button } from 'react-bootstrap';
+import { Carousel } from 'react-bootstrap';
 
 function Main() {
     return (
@@ -50,7 +50,7 @@ function Main() {
             <div className='main-welcome'>
                 <div className="row">
                     <div className="col-sm-12 col-md-6">
-                        <h3><b>WELCOME TO GOLDEN FORK</b></h3>
+                        <h3><b>VÄLKOMMEN TILL GOLDEN FORK</b></h3>
                         <br />
                         <p>
                             Golden Fork är Stockholms äldsta och bästa rockställe! En oas för dig som gillar god mat och bra musik, oavsett ålder eller samhällsklass. <br /><br />
@@ -58,9 +58,8 @@ function Main() {
                 </p>
                     </div>
 
-
                     <div className="col-sm-12 col-md-6">
-                        <h3><b>TODAY'S MENU</b></h3>
+                        <h3><b>DAGENS MENY</b></h3>
                         <br />
                         <img
                             className="d-block w-100"
@@ -68,15 +67,13 @@ function Main() {
                             alt="Today's menu"
                         />
                     </div>
-
-
                 </div>
+            </div>
 
-                <Button className=' mt-5' variant="danger" size="lg" block>
-                    <Link to='/boka' > Book a table</Link>
-                </Button>
-
-
+            <div className=' main-btn ' >
+                <button  >
+                    <Link to='/boka' className='main-btn-link'> Boka ett bord</Link>
+                </button>
             </div>
         </>
     )
