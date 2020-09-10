@@ -5,6 +5,7 @@ import Reservation from '../../../models/Reservation';
 function Boka() {
     const [reservationName, setReservationName] = useState('');
     const [reservationMail, setReservationMail] = useState('');
+    const [reservationPhone, setReservationPhone] = useState('');
     const [reservationDate, setReservationDate] = useState('');
     const [reservationTime, setReservationTime] = useState(1800);
     const [reservationPeople, setReservationPeople] = useState(1);
@@ -21,6 +22,10 @@ function Boka() {
     function updateMail(e: ChangeEvent<HTMLInputElement>) {
       setReservationMail(e.target.value);
   }
+
+  function updatePhone(e: ChangeEvent<HTMLInputElement>) {
+    setReservationPhone(e.target.value);
+}
 
     function updateDate(e: ChangeEvent<HTMLInputElement>) {
         setReservationDate(e.target.value);
@@ -81,6 +86,7 @@ function Boka() {
             newReservation.date = reservationDate;
             newReservation.name = reservationName;
             newReservation.mail = reservationMail;
+            newReservation.phone = reservationPhone;
             newReservation.people = reservationPeople;
             newReservation.time = reservationTime;
             
@@ -92,6 +98,7 @@ function Boka() {
                 setReservationDate('');
                 setReservationName('');
                 setReservationMail('');
+                setReservationPhone('');
                 setReservationTime(0);
             });
         }
@@ -141,6 +148,10 @@ function Boka() {
 
                       <div>
                         <input type="email" placeholder="Mail till bokningen" value={reservationMail} onChange={updateMail} required />
+                      </div>
+
+                      <div>
+                        <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3} [0-9]{2} [0-9]{2}" placeholder="XXX-XXX XX XX" value={reservationPhone} onChange={updatePhone} required />
                       </div>
 
                       <div>

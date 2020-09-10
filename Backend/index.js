@@ -59,6 +59,7 @@ app.post("/", async (req, res) => {
     let newReservation = new Reservation({
         name : reservation.name,
         mail: reservation.mail,
+        phone: reservation.phone,
         date : reservation.date,
         people : reservation.people,
         time : reservation.time

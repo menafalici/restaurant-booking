@@ -10,6 +10,7 @@ function Admin() {
     const [nameWarning, setNameWarning] = useState(false);
     const [reservationName, setReservationName] = useState('');
     const [reservationMail, setReservationMail] = useState('');
+    const [reservationPhone, setReservationPhone] = useState('');
     const [reservationDate, setReservationDate] = useState('');
     const [reservationTime, setReservationTime] = useState(1800);
     const [booking, setBooking] = useState(false);
@@ -22,6 +23,10 @@ function Admin() {
     function updateMail(e: ChangeEvent<HTMLInputElement>) {
       setReservationMail(e.target.value);
   }
+
+    function updatePhone(e: ChangeEvent<HTMLInputElement>) {
+        setReservationPhone(e.target.value);
+    }
 
     function updateDate(e: ChangeEvent<HTMLInputElement>) {
         setReservationDate(e.target.value);
@@ -94,6 +99,7 @@ function Admin() {
             newReservation.date = reservationDate;
             newReservation.name = reservationName;
             newReservation.mail = reservationMail;
+            newReservation.phone = reservationPhone;
             newReservation.people = reservationPeople;
             newReservation.time = reservationTime;
             
@@ -164,6 +170,10 @@ function Admin() {
                       </div>
 
                       <div>
+                        <input type="tel" id="phone" pattern="[0-9]{3}-[0-9]{3} [0-9]{2} [0-9]{2}" placeholder="XXX-XXX XX XX" value={reservationPhone} onChange={updatePhone} required />
+                      </div>
+
+                      <div>
                           <span>Antal personer: </span>
                           <input type="number" value={reservationPeople} onChange={updatePeople} min="1" max="6" placeholder="1-6" /> 
 
@@ -188,7 +198,8 @@ function Admin() {
         <ul>
             {reservations.map((reservation: Reservation) => {
                 return <div key={reservation._id}>
-                    <li key={reservation._id}>{reservation.mail} - {reservation.name} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
+                    <li key={reservation._id}>
+                        {reservation.mail} - {reservation.name} - {reservation.phone} - {reservation.people} personer - {reservation.date} - {reservation.time}</li>
                     <button onClick={() => deleteReservation(reservation._id)}>remove</button>
                     <button onClick={() => deleteReservation(reservation._id)}>change</button>
                     
