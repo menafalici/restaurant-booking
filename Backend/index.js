@@ -85,35 +85,36 @@ app.post("/", async (req, res) => {
         else {
             res.redirect("/");
         }
-    });
+    });    
 
     let testAccount = await nodemailer.createTestAccount();
 
-    let transporter = nodemailer.createTransport({
-        host: "smtp.ethereal.email",
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-          user: testAccount.user, // generated ethereal user
-          pass: testAccount.pass, // generated ethereal password
-        },
-      });
+  let transporter = nodemailer.createTransport({
+    name: "goldenfork.com",
+    host: "smtp.ethereal.email",
+    port: 587,
+    secure: false, // true for 465, false for other ports
+    auth: {
+      user: testAccount.user, // generated ethereal user
+      pass: testAccount.pass, // generated ethereal password
+    },
+  });
 
-      let info = await transporter.sendMail({
-        from: "Restaurang Booking",
+    let info = await transporter.sendMail({
+        from: 'Golden Fork <boka@goldenfork.com>',
         to: reservation.mail,
         subject: "Din bokning hos Golden Fork.",
         text:`
         Tack för din bokning ${reservation.name}. 
         Varmt välkommen till Golden Fork den ${reservation.date} för ${reservation.people} personer, klockan ${reservation.time}.
         Vid avbokning vänligen ring till restaurangen på 08-666666.`
-      });
+    });
+    
+    console.log("Message sent: %s", info.messageId);
+    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
 
-      console.log("Message sent: %s", info.messageId);
-  // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-  // Preview only available when sending through an Ethereal account
-  console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
+    // Preview only available when sending through an Ethereal account
+    console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     
 })
 
@@ -141,15 +142,16 @@ app.get("/updateBooking/:id", async (req,res) => {
     res.send(oneBooking);
 })
 
-// app.put("/updateBooking/:id", async(req,res)=>{
-//     const updatedReservation = await Reservation.updateOne({
-//         _id: req.params._id
-//     },
-//     {$set: {
-//         date: req.body.updateReservation.date,
-//         time: req.body.updateReservation.time,
-//     }})
-// })
+app.put("/updateBooking/:id", async(req,res)=>{
+    const updatedReservation = await Reservation.updateOne({
+        _id: req.params._id
+    },
+    {$set: {
+        date: req.body.updateReservation.date,
+        time: req.body.updateReservation.time,
+    }})
+
+})
 
 
 mongoose
