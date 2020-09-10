@@ -2,7 +2,6 @@ import React, { useEffect, useState, ChangeEvent } from "react";
 import axios from "axios";
 import "./Admin.css";
 import Reservation from "../../../models/Reservation";
-import Update from "../updatereservation/Update";
 
 export default function Admin() {
     const [reservations, setReservations] = useState([]);
@@ -17,7 +16,6 @@ export default function Admin() {
     const [reservationTime, setReservationTime] = useState(1800);
     const [booking, setBooking] = useState(false);
     const currentDate: string = new Date().toLocaleDateString();
-    const [showReservation, setShowReservation] = useState(false);
 
     function updateName(e: ChangeEvent<HTMLInputElement>) {
         setReservationName(e.target.value);
@@ -217,7 +215,7 @@ export default function Admin() {
                             }
                         </div>
 
-                        <h3>Reserved tables</h3>
+                        <h3>Bokningar</h3>
                         <ol>
                             {reservations.map((reservation: Reservation) => {
                                 return <div key={reservation._id}>
@@ -226,7 +224,7 @@ export default function Admin() {
 
                                     <button onClick={() => deleteReservation(reservation._id)}>Ta bort</button>
 
-                                    <button onClick={() => deleteReservation(reservation._id)}>change</button>
+                                    <button onClick={() => deleteReservation(reservation._id)}>Redigera</button>
 
                                 </div>
                             })}

@@ -8,20 +8,6 @@ const nodemailer = require('nodemailer')
 const config = require("./database/config");;
 const Reservation = require("./models/Reservation");
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     next();
-//   });
-
-let sendFrom = nodemailer.createTransport({
-    service: 'smtp.gmail.com',
-    auth: {
-      user: config.email,
-      pass: config.password,
-    }
-  });
-
 app.use(cors({
     origin: 'http://localhost:3000'
   }));
@@ -32,8 +18,8 @@ app.use(bodyParser.json());
 app.get('/', async function (req, res) {
     let reservationArray = [];
     let reservations  = await Reservation.find({
-        // name: "Skor"
-    });
+    
+    }).sort({date: 1});
 
     reservationArray = reservations;
   
@@ -93,10 +79,10 @@ app.post("/", async (req, res) => {
     name: "goldenfork.com",
     host: "smtp.ethereal.email",
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false, 
     auth: {
-      user: testAccount.user, // generated ethereal user
-      pass: testAccount.pass, // generated ethereal password
+      user: testAccount.user,
+      pass: testAccount.pass
     },
   });
 
@@ -111,21 +97,14 @@ app.post("/", async (req, res) => {
     });
     
     console.log("Message sent: %s", info.messageId);
-    // Message sent: <b658f8ca-6296-ccf4-8306-87d57a0b4321@example.com>
-
-    // Preview only available when sending through an Ethereal account
     console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
     
 })
 
 app.delete("/deleteBooking/:id", async (req, res) => {
-    // removing reservation from database
     const deletedReservation = await Reservation.findOne({
         _id: req.params.id
     });
-    // const reservation = await Reservation.deleteOne({
-    //     reservationId: req.params.id
-    // });
 
     deletedReservation.delete();
 
