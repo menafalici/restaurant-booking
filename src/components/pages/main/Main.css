@@ -10,3 +10,21 @@
     font-size: 25px;
 }
 
+.main-btn{
+background-color: #a50f16;
+margin: 100px;
+text-align: center;
+padding: 3px;
+}
+
+.main-btn button{
+    background-color: transparent;  
+    text-decoration: none;
+    padding:5px 30px 5px  ;
+    width: 100%;
+}
+
+.main-btn-link{
+    color: #fff;
+    font-size: 20px;
+}

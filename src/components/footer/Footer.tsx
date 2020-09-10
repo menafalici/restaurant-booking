@@ -7,7 +7,7 @@ function Footer() {
         <div className='footer-container'>
             <div className="row">
                 <div className="col-sm-12 col-md-4">
-                    <h6><b>About Us</b></h6>
+                    <h6><b>Om Oss</b></h6>
                     <p>
                         Golden Fork är Stockholms äldsta och bästa rockställe! En oas för dig som gillar god mat och bra musik, oavsett ålder eller samhällsklass.
                 </p>
@@ -33,10 +33,10 @@ function Footer() {
                 </div>
 
                 <div className="col-sm-12 col-md-4">
-                    <h6><b>Contact Us</b></h6>
+                    <h6><b>Kontakt Oss</b></h6>
                     <ul className="footer-contact">
-                        <li>Phone: 010-534 28 90</li>
-                        <li>E-Mail: info@goldenfork.se</li>
+                        <li>Telefon: 010-534 28 90</li>
+                        <li>E-post: info@goldenfork.se</li>
                     </ul>
                 </div>
             </div>
