@@ -1,9 +1,9 @@
 import React, { useState, ChangeEvent, FormEvent } from "react";
 import axios from "axios";
-import "./Boka.css";
+import "./Booking.css";
 import Reservation from "../../../models/Reservation";
 
-export default function Boka() {
+export default function Booking() {
   const [reservationName, setReservationName] = useState("");
   const [reservationMail, setReservationMail] = useState("");
   const [reservationDate, setReservationDate] = useState("");

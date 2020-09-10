@@ -1,8 +1,8 @@
 import React from "react";
-import "./Kontakt.css";
+import "./Contact.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function Kontakt() {
+export default function Contact() {
 
     return (
         <div>

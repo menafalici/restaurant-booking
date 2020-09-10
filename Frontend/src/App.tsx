@@ -7,15 +7,14 @@ import {
 } from "react-router-dom";
 import Navbar from './components/navbar/Navbar';
 import Main from './components/pages/main/Main';
-import Kontakt from './components/pages/kontakt/Kontakt';
-import Boka from './components/pages/boka/Boka'
+import Contact from './components/pages/contact/Contact';
+import Booking from './components/pages/booking/Booking'
 import Footer from './components/footer/Footer';
 import Admin from './components/pages/admin/Admin';
-import NotFound from './components/notfound/NotFound';
 import Thankyou from './components/pages/thankyou/Thankyou';
 import Update from './components/pages/updatereservation/Update';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Router>
@@ -25,11 +24,11 @@ function App() {
             <Route exact path='/'>
               <Main />
             </Route>
-            <Route path='/kontakt'>
-              <Kontakt />
+            <Route path='/contact'>
+              <Contact />
             </Route>
-            <Route path='/boka'>
-              <Boka />
+            <Route path='/booking'>
+              <Booking />
             </Route>
             <Route path='/admin'>
               <Admin />
@@ -37,8 +36,6 @@ function App() {
             <Route path='/thankyou'>
               <Thankyou />
             </Route>
-            {/* <Route component={NotFound}>
-              </Route> */}
             <Route path="/updateBooking/:id" component={Update}>
               <Update></Update>
             </Route>
@@ -50,5 +47,3 @@ function App() {
 
   );
 }
-
-export default App;

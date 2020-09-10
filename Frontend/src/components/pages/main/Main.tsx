@@ -1,7 +1,6 @@
 import React from "react";
 import "./Main.css";
 import { Link } from "react-router-dom";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
 
 export default function Main() {
@@ -55,7 +54,7 @@ export default function Main() {
 
             <div className="main-btn">
                 <button>
-                    <Link to='/boka' className='main-btn-link'> Boka ett bord</Link>
+                    <Link to="/booking" className="main-btn-link">Boka ett bord</Link>
                 </button>
             </div>
         </div>

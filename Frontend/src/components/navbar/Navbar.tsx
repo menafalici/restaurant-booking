@@ -23,10 +23,10 @@ export default function Navbar() {
                             <Link to="/" className="nav-links" onClick={closeMobilemenu}><i className="fas fa-home"></i></Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/kontakt" className="nav-links" onClick={closeMobilemenu}>Kontakt</Link>
+                            <Link to="/contact" className="nav-links" onClick={closeMobilemenu}>Kontakt</Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="/boka" className="nav-links boka" onClick={closeMobilemenu}>Boka</Link>
+                            <Link to="/booking" className="nav-links boka" onClick={closeMobilemenu}>Boka</Link>
                         </li>
                     </ul>
                 </div>
